@@ -6,4 +6,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\arquivos\templates\TemplateEmail.html" />
+    <Content Remove="wwwroot\TemplateEmai-v1.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\TemplateEmail.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\arquivos\templates\TemplateEmail.html" />
+    <None Include="wwwroot\TemplateEmai-v1.html" />
+    <None Include="wwwroot\TemplateEmail.html" />
+  </ItemGroup>
+
 </Project>
