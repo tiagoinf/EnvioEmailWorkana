@@ -1,10 +1,53 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Envio Email";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Envio Email</h1>
+
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">@TempData["Erro"]</div>
+}
+
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success">@TempData["Sucesso"]</div>
+}
+
+<form method="post" class="form-row mt-4">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+        <label class="text-secondary-d3 mb-1">
+            Digite o nome:
+        </label>
+        <div class="d-flex align-items-center">
+            <input asp-for="Input.Nome" class="form-control form-control-lg pr-4 shadow-none" placeholder="Nome" />
+            <i class="fa fa-envelope text-grey-m2 ml-n4"></i>
+        </div>
+        <span asp-validation-for="Input.Nome" class="form-text form-error text-danger-m2"></span>
+    </div>
+
+    <div class="form-group col-sm-10 offset-sm-1 col-md-8 offset-md-2 mt-3">
+        <label class="text-secondary-d3 mb-1">
+            Digite o endereço de email:
+        </label>
+        <div class="d-flex align-items-center">
+            <input asp-for="Input.Email" class="form-control form-control-lg pr-4 shadow-none" placeholder="Email" />
+            <i class="fa fa-envelope text-grey-m2 ml-n4"></i>
+        </div>
+        <span asp-validation-for="Input.Email" class="form-text form-error text-danger-m2"></span>
+    </div>
+
+    <div class="form-group col-sm-10 offset-sm-1 col-md-8 offset-md-2 mt-1">
+        <button type="submit" class="btn btn-primary px-4 btn-bold mt-2 mb-4">
+            Enviar
+        </button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

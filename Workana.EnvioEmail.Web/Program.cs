@@ -1,7 +1,12 @@
+using Workana.EnvioEmail.Web.Models.Email;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Email Service
+builder.Services.AddScoped<IEmailServico, EmailServico>();
 
 var app = builder.Build();
 

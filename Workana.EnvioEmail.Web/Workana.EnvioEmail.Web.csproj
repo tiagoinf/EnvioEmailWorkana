@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\arquivos\templates\TemplateEmail.html" />
-    <Content Remove="wwwroot\TemplateEmai-v1.html" />
+    <Content Remove="wwwroot\arquivos\templates\EmailBemVindo.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,8 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\arquivos\templates\TemplateEmail.html" />
-    <None Include="wwwroot\TemplateEmai-v1.html" />
+    <None Include="wwwroot\arquivos\templates\EmailBemVindo.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\TemplateEmail.html" />
   </ItemGroup>
 
